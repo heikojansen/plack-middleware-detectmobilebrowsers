@@ -37,10 +37,10 @@ my $app = sub {
 
 builder {
 	if ( defined $key ) {
-        enable 'DetectMobileBrowsers', env_key => $key;
+        enable 'DetectMobileBrowsers', env_key => $key, tablets_as_mobile => 0;
 	}
 	else {
-		enable 'DetectMobileBrowsers';
+		enable 'DetectMobileBrowsers', tablets_as_mobile => 1;
 	}
 	$app;
 };
@@ -50,6 +50,9 @@ builder {
 #
 # Mobile:
 # curl -A 'Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19' http://0:5000/
+#
+# Tablet
+# curl -A 'Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Safari/535.19' http://0:5000/
 #
 # Desktop:
 # curl -A 'Mozilla/5.0 (X11; Linux x86_64; rv:18.0) Gecko/20100101 Firefox/18.0' http://0:5000/
