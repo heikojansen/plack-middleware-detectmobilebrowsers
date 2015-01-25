@@ -37,7 +37,7 @@ my $app = sub {
 
 builder {
 	if ( defined $key ) {
-        enable 'DetectMobileBrowsers', env_key => $key, tablets_as_mobile => 0;
+		enable 'DetectMobileBrowsers', env_key => $key, tablets_as_mobile => 0;
 	}
 	else {
 		enable 'DetectMobileBrowsers', tablets_as_mobile => 1;
